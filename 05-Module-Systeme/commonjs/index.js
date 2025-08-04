@@ -1,11 +1,11 @@
-// .js we can ignore
-const lib = require("./lib");
-console.log(lib);
+const lib = require('./lib');
+const log = require('./log');
 
 const a = 17;
 const b = 4;
 
-const erg = lib.add(a, b);
-console.log(erg);
+let erg = lib.sub(a,b);
+erg = lib.add(a,b);
 
-// now it doesn't work because we have not defined the function 'add' and it is only NodeJS based not JavaScript, so we need to import it from the lib.js file
+log(erg);
+

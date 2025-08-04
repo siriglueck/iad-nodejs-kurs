@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Todos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
 </head>
 <body>
-	<h1>todos</h1>
-	<form action="">
-		<input type="text" name="text" placeholder="Was steht an?">
-		<button type="submit">Hinzufügen</button>
-	</form>
-	<ul id="lsite">
+    <h1>todos</h1>
+    <form id="formular">
+        <input name="text" type="text" placeholder="Was steht an?">
+    </form>
+    <ul id="liste">
 
-	</ul>
-	<script>
-		const url = 'http://localhost:3000/api/todos';
+    </ul>
+    <script>
+        const url = 'http://localhost:3000/api/todos';
+        const listElt = document.getElementById('liste');
 
-		function getTodos() {
-			
-		}
-		function addTodos() {}
+        function getTodos() {
+            fetch(url).then(resp => resp.json()).then(todos => {
+                todos.forEach(todo => {
+                    listElt.insertAdjacentHTML('beforeend', `<li>${todo.text}</li>`)
+                })
+            })
+        }
 
-		getTodos();
-	</script>
+        function addTodo(text) {
+            fetch(url, { method: 'POST', body: text}).then(resp => resp.json()).then(todo => {
+                listElt.insertAdjacentHTML('beforeend', `<li>${todo.text}</li>`)
+            })
+        }
+
+        getTodos();
+        document.getElementById('formular').addEventListener('submit', (ev) => {
+            const data = new FormData(ev.target);
+            const text = data.get('text');
+            addTodo(text);
+        });
+    </script>
 </body>
 </html>

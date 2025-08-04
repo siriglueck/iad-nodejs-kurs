@@ -1,9 +1,14 @@
-//all functions that we want to use in other files
+const log = require("./log");
 
-function add(a, b) {
-  return a + b;
+function add (a,b) {
+    log(`Add ${a}, ${b}`)
+    return a+b;
 }
 
-// CommonJS-Module-Export
-// module.exports = { add : add };
-module.exports = add;
+function sub (a,b) {
+    log(`Sub ${a}, ${b}`)
+    return a - b;
+}
+
+// CommonJS-Modul
+module.exports = { add, sub }
