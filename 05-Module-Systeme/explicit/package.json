@@ -1,0 +1,12 @@
+{
+    "name": "demo-proket",
+    "license": "MIT",
+    "author": {
+        "name": "Micha Buchholz",
+        "email": "micha@egal.de"
+    },
+    "repository": {
+        "type": "git",
+        "url": "..."
+    }
+}
