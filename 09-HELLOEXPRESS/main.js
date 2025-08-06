@@ -8,10 +8,9 @@ const app = express();
 // Middlewares!
 
 // Dev Tools Blocker
-
 app.use((req, res, next) => {
-  if (req.url === "/.well-knwon/appspecifics/com.chrome.devtools.json") {
-    res.status(404);
+  if (req.url === "/.well-known/appspecific/com.chrome.devtools.json") {
+    res.sendStatus(404);
     res.end();
   } else {
     next();
@@ -61,7 +60,7 @@ app.use((req, res, next) => {
   }
 });
 
-// No global middlewarem restricted to path that starts wtih /api and /api/...
+// restrict middleware (no global) to path that starts wtih /api and /api/...
 app.use("/api", (req, res, next) => {
   console.log("-----> API Request");
   next();
