@@ -1,0 +1,17 @@
+{
+  "name": "dynamic-data",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/main.js",
+    "start": "node src/main.js",
+    "check": "biome check --write"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.1.3"
+  }
+}
