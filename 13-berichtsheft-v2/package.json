@@ -1,0 +1,23 @@
+{
+	"name": "13-berichtsheft",
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "node ./bin/www",
+		"dev:code": "node --watch ./bin/www",
+		"dev:styles": "npx @tailwindcss/cli --watch -i ./src/app.css -o ./public/stylesheets/style.css",
+		"dev": "run-p dev:**"
+	},
+	"dependencies": {
+		"better-sqlite3": "^12.2.0",
+		"express": "^5.1.0",
+		"express-handlebars": "^8.0.3",
+		"morgan": "^1.10.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.4",
+		"@tailwindcss/cli": "^4.1.11",
+		"npm-run-all2": "^8.0.4",
+		"tailwindcss": "^4.1.11"
+	}
+}

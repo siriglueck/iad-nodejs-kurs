@@ -1,0 +1,43 @@
+<div>
+  <main class="px-4 mt-8">
+    <h1 class="text-2xl font-medium">Registrierung</h1>
+    <form method="post" class="flex flex-col gap-4 mt-4 p-4 border border-gray-300 rounded-md shadow-xl">
+
+      <div class="flex flex-col gap-1">
+        <label class="font-semibold text-sm" for="first_name">Vorname:</label>
+        <input class="px-2.5 py-1.5 border border-gray-300 rounded-sm" type="text" id="first_name" name="first_name" required>
+        {{#if error.first_name }}
+          <span class="text-sm text-red-600"> {{error.first_name}}</span>
+        {{/if}}
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="font-semibold text-sm" for="last_name">Nachname:</label>
+        <input class="px-2.5 py-1.5 border border-gray-300 rounded-sm" type="text" id="last_name" name="last_name" required>
+        {{#if error.last_name }}
+          <span class="text-sm text-red-600"> {{error.last_name}}</span>
+        {{/if}}
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="font-semibold text-sm" for="email">Email:</label>
+        <input class="px-2.5 py-1.5 border border-gray-300 rounded-sm" type="email" id="email" name="email" required>
+        {{#if error.email }}
+          <span class="text-sm text-red-600"> {{error.email}}</span>
+        {{/if}}
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="font-semibold text-sm" for="password">Passwort:</label>
+        <input class="px-2.5 py-1.5 border border-gray-300 rounded-sm" type="password" id="password" name="password" required>
+        {{#if error.password }}
+          <span class="text-sm text-red-600"> {{error.password}}</span>
+        {{/if}}
+      </div>
+
+      <div>
+        <button class="btn" type="submit">Registrieren</button>
+      </div>
+    </form>
+  </main>
+</div>
