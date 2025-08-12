@@ -1,0 +1,11 @@
+<div>
+  <h2>todos</h2>
+  <form method="post">
+    <input autofocus type="text" placeholder="Was liegt an?" name="title">
+  </form>
+  <ul>
+    {{#each todos}}
+    <li>{{ title }}</li>
+    {{/each}}
+  </ul>
+</div>

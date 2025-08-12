@@ -1,0 +1,12 @@
+<div>
+  <h2>todos</h2>
+  <form id="createForm">
+    <input type="text" placeholder="Was liegt an?" name="title">
+  </form>
+  <ul id="todosList">
+    {{#each todos}}
+    <li data-id="{{ id }}">{{ title }}</li>
+    {{/each}}
+  </ul>
+</div>
+<script src="/js/mixed.js"></script>

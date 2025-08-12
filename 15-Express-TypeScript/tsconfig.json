@@ -1,0 +1,10 @@
+{
+  // TS Config hat das Dateiformat JSONC (JSON with comments)
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es2023",
+    "module": "nodenext",
+    "outDir": "dist",
+    "skipLibCheck": true
+  }
+}

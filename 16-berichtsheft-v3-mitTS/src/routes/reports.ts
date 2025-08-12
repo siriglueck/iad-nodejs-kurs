@@ -1,0 +1,14 @@
+import auth from '../middlewares/auth.js';
+import { getEntriesByUser } from '../lib/entries.js';
+import express from 'express';
+
+const reportsRouter = express.Router();
+
+reportsRouter.get('/', auth, (req, res) => {
+	const { user } = res.locals;
+	const entries = getEntriesByUser(user.id);
+
+	res.render('reports/view', { entries });
+});
+
+export default reportsRouter;
